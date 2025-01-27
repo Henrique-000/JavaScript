@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Lista de tarefas | HCS </title>
+    <style>
+        body{
+            font-family: verdana;
+            background-image: linear-gradient(45deg, rgb(24, 24, 24), rgb(132, 14, 201));
+            color: whitesmoke;
+        }
+
+        .caixa{
+            display: flex;
+        }
+
+        .titulo{
+            margin: 10%;
+            margin-right: 20%;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .titulo h1{
+            font-size: 60px;
+        }
+
+        .lista {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .Nãofiz, .jafiz {
+            margin-bottom: 20px;
+        }
+
+        .task-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .task-container p {
+            margin-right: 10px;
+        }
+
+        .btns {
+            margin-left: 10px;
+            color: rgba(0, 0, 0, 0.6);
+            background-color: transparent;
+            border: solid 1px whitesmoke;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .btns:hover{
+            transition: .4s;
+            color: rgb(132, 14, 201);
+            background-color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="caixa">
+        <div class="titulo">
+            <h1> Lista<br>de<br>Tarefas </h1>
+            <p> _______________________________________ </p>
+            <h1> HCS </h1>
+        </div>
+        <div class="lista">
+            <div class="Nãofiz">
+                <h1> Não fiz: </h1>
+                <div class="task-container">
+                    <p id="p"> Ir para a academia </p>
+                    <button class="btns" id="btn1" onclick="clean1()" > <svg  id="btnsvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                        <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
+                      </svg> </button>
+                </div>
+                <div class="task-container">
+                    <p id="pp"> Ir no mercado </p>
+                    <button class="btns" id="btn1" onclick="clean2()" > <svg  id="btnsvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                        <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
+                      </svg> </button>
+                </div>
+                <div class="task-container">
+                    <p id="ppp"> Fazer caminhada </p>
+                    <button class="btns" id="btn1" onclick="clean3()" > <svg  id="btnsvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                        <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
+                      </svg> </button>
+                </div>
+            </div>
+            <div class="jafiz">
+                <h1> Já fiz: </h1>
+                <p class="p-jafiz" id="p1" ></p>
+                <p class="p-jafiz" id="p2" ></p>
+                <p class="p-jafiz" id="p3"></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function clean1(){
+        var p = document.getElementById("p").innerHTML;
+        var p1 = document.getElementById("p1").innerHTML;
+        document.getElementById("p").innerHTML = "";
+        document.getElementById("p1").innerHTML = p;
+    }
+    function clean2(){
+        var pp = document.getElementById("pp").innerHTML;
+        var p2 = document.getElementById("p2").innerHTML;
+        document.getElementById("pp").innerHTML = "";
+        document.getElementById("p2").innerHTML = pp;
+    }
+    function clean3(){
+        var ppp = document.getElementById("ppp").innerHTML;
+        var p3 = document.getElementById("p3").innerHTML;
+        document.getElementById("ppp").innerHTML = "";
+        document.getElementById("p3").innerHTML = ppp;
+    }
+</script>
+</html>
