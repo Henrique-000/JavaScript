@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Teclado | HCS </title>
+</head>
+<style>
+    :root{
+        --black: rgba(0, 0, 0, 0.7);
+        --white: rgba(255, 255, 255, 0.969);
+    }
+
+    body{
+        background-image: linear-gradient(100deg, navy, dodgerblue);
+        font-family: verdana;
+    }
+
+    h1{
+        text-align: center;
+        color: var(--black);
+    }
+
+    p{
+        text-align: center;
+        left: 37%;
+        width: 300px;
+        height: 20px;
+        align-items: center;
+        color: var(--white);
+        background-color: var(--black);
+        border-radius: 5px;
+        padding: 13px;
+        position: absolute;
+    }
+
+    .btns{
+        padding: 10px;
+        font-size: 20px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        color: var(--white);
+        background-color: var(--black);
+        height: 50px;
+        width: 50px;
+        margin: 5px;
+    }
+
+    .btns:hover{
+        transition: .4s;
+        background-color: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+    }
+
+    .caixa{
+        margin-top: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .btn1{
+        padding: 10px;
+        font-size: 20px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        color: var(--white);
+        background-color: var(--black);
+        height: 50px;
+        width: 115px;
+        margin-top: 100px;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    .btn1:hover{
+        transition: .4s;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .btn2{
+        padding: 10px;
+        font-size: 20px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        color: var(--white);
+        background-color: var(--black);
+        height: 50px; /* Ajustei a altura para ficar consistente com os outros botões */
+        width: 50px;  /* Ajustei a largura para ser igual aos outros */
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    .btn0{
+        width: 180px;  
+        padding: 10px;
+        font-size: 20px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        color: var(--white);
+        background-color: var(--black);
+        margin: 5px;
+        cursor: pointer;
+    }
+
+    .btn0:hover{
+        transition: .4s;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+</style>
+<body>
+    <div class="div1">
+        <h1> Teclado de números | HCS </h1>
+        <br>
+        <p id="p">  </p>
+    </div>
+    <div class="caixa">
+        <button class="btns" onclick="clean()"> c </button>
+        <button class="btns" onclick="back()"> < </button>
+        <button class="btns" onclick="insert('/')"> / </button>
+        <button class="btns" onclick="insert('*')"> * </button>
+        <br>
+        <button class="btns" onclick="insert('7')"> 7 </button>
+        <button class="btns" onclick="insert('8')"> 8 </button>
+        <button class="btns" onclick="insert('9')"> 9 </button>
+        <button class="btns" onclick="insert('-')"> - </button>
+        <br>
+        <button class="btns" onclick="insert('4')"> 4 </button>
+        <button class="btns" onclick="insert('5')"> 5 </button>
+        <button class="btns" onclick="insert('6')"> 6 </button>
+        <button class="btns" onclick="insert('+')"> + </button>
+        <br>
+        <button class="btns" onclick="insert('1')"> 1 </button>
+        <button class="btns" onclick="insert('2')"> 2 </button>
+        <button class="btns" onclick="insert('3')"> 3 </button>
+        <button class="btn2" onclick="calcular()"> = </button>
+        <br>
+        <button class="btn0" onclick="insert('0')"> 0 </button>
+        <button class="btns" onclick="insert('.')"> . </button>
+    </div>
+</body>
+<script>
+    function insert(num){
+        var numero = document.getElementById("p").innerHTML;
+        document.getElementById("p").innerHTML = numero + num;
+    }
+
+    function back(){
+        var apagar = document.getElementById("p").innerHTML;
+        document.getElementById("p").innerHTML = apagar.substring(0, apagar.length - 1);
+    }
+
+    function clean(){
+       var limpar = document.getElementById("p").innerHTML = "";
+    }
+
+    function calcular(){
+        var resultado = document.getElementById("p").innerHTML;
+        if (resultado){
+            document.getElementById("p").innerHTML = eval(resultado);
+        }
+        else{
+            document.getElementById("p").innerHTML = "Nada...";
+        }
+    }
+</script>
+</html>
