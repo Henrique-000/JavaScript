@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Lampada | HCS </title>
+</head>
+<style>
+    :root{
+        --white: white;
+        --blue: dodgerblue;
+        --blue2: rgb(59, 155, 252);
+    }
+
+    body{
+        background-color: var(--white);
+        font-family: verdana;
+        text-align: center;
+        display: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1{
+        color: var(--blue);
+    }
+
+    .img{
+        height: 300px;
+        width: 300px;
+        margin-left: 20px;
+    }
+
+    .caixa{
+        display: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btns{
+        background-color: var(--blue);
+        color: var(--white);
+        cursor: pointer;
+        padding: 10px;
+        border: solid 1px var(--white);
+        border-radius: 5px;
+        outline: none;
+        margin: 10px;
+        width: 80px;
+    }
+
+    .btns:hover{
+        transition: .3s;
+        background-color: var(--blue2);
+        height: 50px;
+        width: 100px;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <h1> Lâmpada | HCS </h1>
+    <div class="caixa">
+        <img class="img" id="img" src="https://img.freepik.com/vetores-gratis/lampada-realistica-isolada-de-vetor-sobre-branco_1284-41931.jpg?semt=ais_hybrid">
+        <br><br><br>
+        <button class="btns" onclick="ligar()" > Ligar </button>
+        <button class="btns" onclick="desligar()" > Desligar </button>
+    </div>
+</body>
+<script>
+function ligar(){
+    var img = document.getElementById("img");
+    img.src = 'https://st4.depositphotos.com/13932116/19706/v/450/depositphotos_197065306-stock-illustration-glowing-lightbulb-realistic-vector-illustration.jpg';
+}
+
+function desligar(){
+    var img = document.getElementById("img");
+    img.src = 'https://img.freepik.com/vetores-gratis/lampada-realistica-isolada-de-vetor-sobre-branco_1284-41931.jpg?semt=ais_hybrid';
+}
+
+function quebrar(){
+    img.src = "https://static.vecteezy.com/ti/fotos-gratis/p2/8615874-lampada-quebrada-isolada-em-fundo-branco-foto.jpg";
+}
+
+function aparecer(){
+    img.src = "https://img.freepik.com/vetores-gratis/lampada-realistica-isolada-de-vetor-sobre-branco_1284-41931.jpg?semt=ais_hybrid";
+}
+img.addEventListener('dblclick', quebrar);
+img.addEventListener('click', aparecer);
+</script>
+</html>
